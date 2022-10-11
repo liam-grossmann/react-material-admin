@@ -1,14 +1,26 @@
 {
   "name": "react-material-admin",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "React Material Admin",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "serve": "vite preview --port 3000"
   },
+  "keywords": [
+    "react-material-admin",
+    "reactJs",
+    "ViteJs",
+    "Material"
+  ],
+  "author": "Liam Grossmann",
+  "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
