@@ -1,4 +1,14 @@
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
 
+#detail { 
+  flex: 1;
+  padding: 6rem 3rem;
+  width: 100%;
+}
 
 
 
@@ -75,11 +85,7 @@ button:focus-visible {
 */
 
 
-#root {
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
+
 
 /*
 #sidebar {
@@ -90,15 +96,3 @@ button:focus-visible {
   flex-direction: column;
 }
 */
-
-.detail {
-  flex: 1;
-  padding: 2rem 4rem;
-  width: 100%;
-}
-
-#detail { 
-  flex: 1;
-  padding: 6rem 3rem;
-  width: 100%;
-}
