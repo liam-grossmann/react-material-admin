@@ -7,10 +7,21 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+
 import { Header } from '../header/header';
 import { Link as RouterLink, LinkProps as RouterLinkProps, useLocation, } from 'react-router-dom';
 import React from 'react';
+
+// https://mui.com/material-ui/material-icons/?query=tex
+import HomeIcon from '@mui/icons-material/Home';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import TitleIcon from '@mui/icons-material/Title';
+import SmartButtonIcon from '@mui/icons-material/SmartButton';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
+
+import logo from './../../assets/logo.svg';
+
+
 import { Paper, Typography } from '@mui/material';
 
 interface ListItemLinkProps {
@@ -62,7 +73,6 @@ export const SidePanel = () => {
       <CssBaseline />
       <Header></Header>
 
-  
       <Drawer
         sx={{
           width: `${drawerWidth}rem`,
@@ -75,17 +85,19 @@ export const SidePanel = () => {
         variant="permanent"
         anchor="left"
       > 
- 
         
-        <Toolbar />
+        <Toolbar>
+          <div className='logoImage'>
+            <img src={logo}></img>
+          </div>
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Monitron</Typography>
+        </Toolbar>
         <Divider />
        
-               
-     
-        <ListItemLink key='Home'  to='/' primary='Home' icon={<InboxIcon />}/>
-        <ListItemLink key='About'  to='/about' primary='About' icon={<InboxIcon />}/>
-        <ListItemLink  key='Typography' to='/typography' primary='Typography' icon={<InboxIcon />}/>
-        <ListItemLink  key='Buttons' to='/buttons' primary='Buttons' icon={<InboxIcon />}/>
+        <ListItemLink key='Home'  to='/' primary='Home' icon={<HomeIcon />}/>
+        <ListItemLink  key='Typography' to='/typography' primary='Typography' icon={<TitleIcon />}/>
+        <ListItemLink key='Buttons' to='/buttons' primary='Buttons' icon={<SmartButtonIcon />} />
+        <ListItemLink  key='TextField' to='/textfield' primary='TextField' icon={<TextFieldsIcon />}/>
         <Divider />
         <ListItemLink  key='Settings' to='/settings' primary='Settings' icon={<InboxIcon />}/>
             
