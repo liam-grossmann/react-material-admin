@@ -18,6 +18,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import TitleIcon from '@mui/icons-material/Title';
 import SmartButtonIcon from '@mui/icons-material/SmartButton';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
+import PeopleIcon from '@mui/icons-material/People';
 
 import logo from './../../assets/logo.svg';
 
@@ -97,7 +98,9 @@ export const SidePanel = () => {
         <ListItemLink key='Home'  to='/' primary='Home' icon={<HomeIcon />}/>
         <ListItemLink  key='Typography' to='/typography' primary='Typography' icon={<TitleIcon />}/>
         <ListItemLink key='Buttons' to='/buttons' primary='Buttons' icon={<SmartButtonIcon />} />
-        <ListItemLink  key='TextField' to='/textfield' primary='TextField' icon={<TextFieldsIcon />}/>
+        <ListItemLink key='TextField' to='/textfield' primary='TextField' icon={<TextFieldsIcon />} />
+        <Divider />
+        <ListItemLink key='Users' to='/users' primary='Users' icon={<PeopleIcon />} />
         <Divider />
         <ListItemLink  key='Settings' to='/settings' primary='Settings' icon={<InboxIcon />}/>
             

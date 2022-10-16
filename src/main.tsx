@@ -10,6 +10,7 @@ import ErrorPage from './error-page';
 import Root from './routes/root';
 
 import './index.css'
+import { Users } from './components/Users';
 
 
 
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
       {
         path: "textfield",
         element: <MuiTextField />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "users",
+        element: <Users />,
         errorElement: <ErrorPage />,
       },
       {
