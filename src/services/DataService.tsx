@@ -5,23 +5,146 @@ import johnSmith from './../assets/avatars/johnsmith.jpeg';
 import karenmonroe from './../assets/avatars/karenmonroe.jpeg';
 import juliawest from './../assets/avatars/juliawest.jpeg';
 
-import avatar1 from './../assets/avatars/1.jpeg';
+//import avatar1 from './../assets/avatars/1.jpeg';
+//import avatar2 from './../assets/avatars/2.jpeg';
+import avatar3 from './../assets/avatars/3.jpeg';
+import avatar4 from './../assets/avatars/4.jpeg';
+import avatar5 from './../assets/avatars/5.jpeg';
+import avatar6 from './../assets/avatars/6.jpeg';
+import avatar7 from './../assets/avatars/7.jpeg';
+import avatar8 from './../assets/avatars/8.jpeg';
+import avatar9 from './../assets/avatars/9.jpeg';
+import avatar10 from './../assets/avatars/10.jpeg';
+import avatar11 from './../assets/avatars/11.jpeg';
+import avatar12 from './../assets/avatars/12.jpeg';
+import avatar13 from './../assets/avatars/13.jpeg';
+import avatar14 from './../assets/avatars/14.jpeg';
+import avatar15 from './../assets/avatars/15.jpeg';
+import avatar16 from './../assets/avatars/16.jpeg';
+import avatar17 from './../assets/avatars/17.jpeg';
+import avatar18 from './../assets/avatars/18.jpeg';
+import avatar19 from './../assets/avatars/19.jpeg';
+import avatar20 from './../assets/avatars/20.jpeg';
+import avatar21 from './../assets/avatars/21.jpeg';
+import avatar22 from './../assets/avatars/22.jpeg';
+import avatar23 from './../assets/avatars/23.jpeg';
+import avatar24 from './../assets/avatars/24.jpeg';
+import avatar25 from './../assets/avatars/25.jpeg';
+import avatar26 from './../assets/avatars/26.jpeg';
+import avatar27 from './../assets/avatars/27.jpeg';
+import avatar28 from './../assets/avatars/28.jpeg';
+import avatar29 from './../assets/avatars/29.jpeg';
+import avatar30 from './../assets/avatars/30.jpeg';
+import avatar31 from './../assets/avatars/31.jpeg';
+import avatar32 from './../assets/avatars/32.jpeg';
+import avatar33 from './../assets/avatars/33.jpeg';
+import avatar34 from './../assets/avatars/34.jpeg';
+import avatar35 from './../assets/avatars/35.jpeg';
+import avatar36 from './../assets/avatars/36.jpeg';
+import avatar37 from './../assets/avatars/37.jpeg';
+import avatar38 from './../assets/avatars/38.jpeg';
+import avatar39 from './../assets/avatars/39.jpeg';
+import avatar40 from './../assets/avatars/40.jpeg';
+import avatar41 from './../assets/avatars/41.jpeg';
+import avatar42 from './../assets/avatars/42.jpeg';
+import avatar43 from './../assets/avatars/43.jpeg';
+import avatar44 from './../assets/avatars/44.jpeg';
+import avatar45 from './../assets/avatars/45.jpeg';
+import avatar46 from './../assets/avatars/46.jpeg';
+import avatar47 from './../assets/avatars/47.jpeg';
+import avatar48 from './../assets/avatars/48.jpeg';
+import avatar49 from './../assets/avatars/49.jpeg';
+import avatar50 from './../assets/avatars/50.jpeg';
+import avatar51 from './../assets/avatars/51.jpeg';
+import avatar52 from './../assets/avatars/52.jpeg';
+import avatar53 from './../assets/avatars/53.jpeg';
+import avatar54 from './../assets/avatars/54.jpeg';
+import avatar55 from './../assets/avatars/55.jpeg';
+import avatar56 from './../assets/avatars/56.jpeg';
+import avatar57 from './../assets/avatars/57.jpeg';
+import avatar58 from './../assets/avatars/58.jpeg';
+import avatar59 from './../assets/avatars/59.jpeg';
+import avatar60 from './../assets/avatars/60.jpeg';
+import avatar61 from './../assets/avatars/61.jpeg';
+import avatar62 from './../assets/avatars/62.jpeg';
+import avatar63 from './../assets/avatars/63.jpeg';
+import avatar64 from './../assets/avatars/64.jpeg';
+import avatar65 from './../assets/avatars/65.jpeg';
+import avatar66 from './../assets/avatars/66.jpeg';
+import avatar67 from './../assets/avatars/67.jpeg';
+import avatar68 from './../assets/avatars/68.jpeg';
+import avatar69 from './../assets/avatars/69.jpeg';
+import avatar70 from './../assets/avatars/70.jpeg';
+import avatar71 from './../assets/avatars/71.jpeg';
+import avatar72 from './../assets/avatars/72.jpeg';
+import avatar73 from './../assets/avatars/73.jpeg';
+import avatar74 from './../assets/avatars/74.jpeg';
+import avatar75 from './../assets/avatars/75.jpeg';
+import avatar76 from './../assets/avatars/76.jpeg';
+import avatar77 from './../assets/avatars/77.jpeg';
+import avatar78 from './../assets/avatars/78.jpeg';
+import avatar79 from './../assets/avatars/79.jpeg';
+import avatar80 from './../assets/avatars/80.jpeg';
+import avatar81 from './../assets/avatars/81.jpeg';
+import avatar82 from './../assets/avatars/82.jpeg';
+import avatar83 from './../assets/avatars/83.jpeg';
+import avatar84 from './../assets/avatars/84.jpeg';
+import avatar85 from './../assets/avatars/85.jpeg';
+import avatar86 from './../assets/avatars/86.jpeg';
+import avatar87 from './../assets/avatars/87.jpeg';
+import avatar88 from './../assets/avatars/88.jpeg';
+import avatar89 from './../assets/avatars/89.jpeg';
+import avatar90 from './../assets/avatars/90.jpeg';
+import avatar91 from './../assets/avatars/91.jpeg';
+import avatar92 from './../assets/avatars/92.jpeg';
+import avatar93 from './../assets/avatars/93.jpeg';
+import avatar94 from './../assets/avatars/94.jpeg';
+import avatar95 from './../assets/avatars/95.jpeg';
+import avatar96 from './../assets/avatars/96.jpeg';
+import avatar97 from './../assets/avatars/97.jpeg';
+import avatar98 from './../assets/avatars/98.jpeg';
+import avatar99 from './../assets/avatars/99.jpeg';
+import avatar100 from './../assets/avatars/100.jpeg';
 
 import users from './users.json';
 
+const arr = new Array();
+//arr.push(avatar1);
+//arr.push(avatar2);
+arr.push(avatar3);
+arr.push(avatar4);
+arr.push(avatar5);
+arr.push(avatar6);
+arr.push(avatar7);
+//arr.push(avatar8);
+//arr.push(avatar9);
+arr.push(avatar10);
+
+arr.push(avatar12);
+arr.push(avatar13);
+arr.push(avatar14);
+arr.push(avatar15);
+arr.push(avatar16);
 
 
 
 export class DataService {
 
     constructor() { }
+
+
     
     getUsers(): IUser[] {
         let listToReturn = new Array<IUser>();
 
 
-        users.forEach(user => {
-            listToReturn.push(new User(user))
+        users.forEach((user, i) => {
+            i = i + 1;
+            if (i < 5) {
+                let userToAdd = new User(user);
+                userToAdd.avatar =  arr[Number(user.avatar)];
+                listToReturn.push(userToAdd);
+            }
         });
 
 
@@ -42,7 +165,7 @@ export class DataService {
                 password: 'password',
                 department: 'Management',
                 jobTitle: 'Managing Director',
-                hiredDate: new Date('2015-01-03'),
+                hiredDate: '2015-01-03',
                 status: true,
                 avatar: johnSmith
             }
