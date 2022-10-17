@@ -35,7 +35,7 @@ interface ListItemLinkProps {
 // Use prop forwarding for the routing so that mui links are forwarded to 
 // the react - router rather then the server
 function ListItemLink(props: ListItemLinkProps) {
-  const { key, to, primary, icon } = props;
+  const { to, primary, icon } = props;
 
 
 

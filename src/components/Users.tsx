@@ -42,7 +42,7 @@ export const Users = () => {
                 key={user.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                    <TableCell><Avatar src={user.avatar? user.avatar : ''}></Avatar></TableCell>
+                    <TableCell><Avatar  src={user.avatar? user.avatar : null}></Avatar></TableCell>
                 <TableCell component="th" scope="row">
                   {user.firstName} {user.lastName}
                 </TableCell>

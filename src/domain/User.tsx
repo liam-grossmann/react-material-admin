@@ -10,7 +10,7 @@ export interface IUser {
     jobTitle: string;
     hiredDate: Date;
     status: boolean;
-    avatar: number;
+    avatar: any;
 }
 
 export class User implements IUser {

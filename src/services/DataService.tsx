@@ -65,13 +65,13 @@ import avatar57 from './../assets/avatars/57.jpeg';
 import avatar58 from './../assets/avatars/58.jpeg';
 import avatar59 from './../assets/avatars/59.jpeg';
 import avatar60 from './../assets/avatars/60.jpeg';
-//import avatar61 from './../assets/avatars/61.jpeg';
+import avatar61 from './../assets/avatars/61.jpeg';
 import avatar62 from './../assets/avatars/62.jpeg';
-//import avatar63 from './../assets/avatars/63.jpeg';
+import avatar63 from './../assets/avatars/63.jpeg';
 import avatar64 from './../assets/avatars/64.jpeg';
 import avatar65 from './../assets/avatars/65.jpeg';
 import avatar66 from './../assets/avatars/66.jpeg';
-//import avatar67 from './../assets/avatars/67.jpeg';
+import avatar67 from './../assets/avatars/67.jpeg';
 import avatar68 from './../assets/avatars/68.jpeg';
 import avatar69 from './../assets/avatars/69.jpeg';
 //import avatar70 from './../assets/avatars/70.jpeg';
@@ -264,13 +264,13 @@ export class DataService {
         arr.push(avatar59);
 
         arr.push(avatar60);
-     //   arr.push(avatar61);
+        arr.push(avatar61);
         arr.push(avatar62);
-     //   arr.push(avatar63);
+        arr.push(avatar63);
         arr.push(avatar64);
         arr.push(avatar65);
         arr.push(avatar66);
-      //  arr.push(avatar67);
+        arr.push(avatar67);
         arr.push(avatar68);
         arr.push(avatar69);
 
