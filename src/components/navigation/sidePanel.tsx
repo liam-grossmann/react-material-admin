@@ -26,7 +26,6 @@ import logo from './../../assets/logo.svg';
 import { Paper, Typography } from '@mui/material';
 
 interface ListItemLinkProps {
-  key: string;
   to: string;
   primary: string;
   icon?: React.ReactElement;
@@ -37,6 +36,8 @@ interface ListItemLinkProps {
 // the react - router rather then the server
 function ListItemLink(props: ListItemLinkProps) {
   const { key, to, primary, icon } = props;
+
+
 
   const renderLink = React.useMemo(
     () =>
@@ -50,7 +51,7 @@ function ListItemLink(props: ListItemLinkProps) {
   );
 
   return (
-    <ListItem key={key} disablePadding>
+    <ListItem key={primary} disablePadding>
       <ListItemButton component={renderLink}>
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
@@ -95,14 +96,14 @@ export const SidePanel = () => {
         </Toolbar>
         <Divider />
        
-        <ListItemLink key='Home'  to='/' primary='Home' icon={<HomeIcon />}/>
-        <ListItemLink  key='Typography' to='/typography' primary='Typography' icon={<TitleIcon />}/>
-        <ListItemLink key='Buttons' to='/buttons' primary='Buttons' icon={<SmartButtonIcon />} />
-        <ListItemLink key='TextField' to='/textfield' primary='TextField' icon={<TextFieldsIcon />} />
+        <ListItemLink   to='/' primary='Home' icon={<HomeIcon />}/>
+        <ListItemLink  to='/typography' primary='Typography' icon={<TitleIcon />}/>
+        <ListItemLink  to='/buttons' primary='Buttons' icon={<SmartButtonIcon />} />
+        <ListItemLink  to='/textfield' primary='TextField' icon={<TextFieldsIcon />} />
         <Divider />
-        <ListItemLink key='Users' to='/users' primary='Users' icon={<PeopleIcon />} />
+        <ListItemLink  to='/users' primary='Users' icon={<PeopleIcon />} />
         <Divider />
-        <ListItemLink  key='Settings' to='/settings' primary='Settings' icon={<InboxIcon />}/>
+        <ListItemLink   to='/settings' primary='Settings' icon={<InboxIcon />}/>
             
       </Drawer>
 

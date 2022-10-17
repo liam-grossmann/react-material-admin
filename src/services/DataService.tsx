@@ -5,6 +5,8 @@ import johnSmith from './../assets/avatars/johnsmith.jpeg';
 import karenmonroe from './../assets/avatars/karenmonroe.jpeg';
 import juliawest from './../assets/avatars/juliawest.jpeg';
 
+import avatar1 from './../assets/avatars/1.jpeg';
+
 import users from './users.json';
 
 
@@ -18,9 +20,9 @@ export class DataService {
         let listToReturn = new Array<IUser>();
 
 
-       /* users.forEach(user => {
+        users.forEach(user => {
             listToReturn.push(new User(user))
-        });*/
+        });
 
 
         listToReturn.push(this.getUser01())
@@ -38,9 +40,9 @@ export class DataService {
                 lastName: 'Smith',
                 emailAddress: 'johnsmith@monitron.com',
                 password: 'password',
-                depatment: 'Management',
+                department: 'Management',
                 jobTitle: 'Managing Director',
-                dateHired: new Date('2015-01-03'),
+                hiredDate: new Date('2015-01-03'),
                 status: true,
                 avatar: johnSmith
             }
