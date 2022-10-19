@@ -30,8 +30,23 @@ npm install @mui/x-data-grid-premium
 1) Login
 2) Add product icon to the navbar
 3) Add a small service to return a bunch of users
-4) 
-5) 
+4) Breadcrumbs 
+5) Scroll restoration https://v5.reactrouter.com/web/guides/scroll-restoration
 
 10) Develop this functionality https://github.com/creativetimofficial/material-dashboard-react
+
+https://demos.creative-tim.com/material-dashboard-react/#/dashboard?ref=readme-mdr
+
+
+
+
+
+1) Dashboard with a few charts
+2) Tables screen
+3) RTL
+4) Notifications
+5) Prifle pages
+6) Sign in
+7) Sign up
+8) Configurator
 
