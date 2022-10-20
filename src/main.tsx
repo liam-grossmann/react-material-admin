@@ -6,11 +6,14 @@ import { MuiButton } from './components/MuiButton';
 import { MuiTypography } from './components/MuiTypography';
 import { MuiTextField } from './components/MuiTextField';
 import { Welcome } from './components/Welcome';
-import ErrorPage from './error-page';
-import Root from './routes/root';
+import ErrorPageLayout from './layouts/errorPageLayout';
+import AppLayout from './layouts/appLayout';
 
 import './index.css'
 import { Users } from './components/Users';
+import SignInLayout from './layouts/signInLayout';
+import SignUpLayout from './layouts/signUpLayout';
+import ResetPasswordLayout from './layouts/resetPasswordLayout';
 
 
 
@@ -29,41 +32,54 @@ const theme = createTheme({
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
+    element: <AppLayout />,
+    errorElement: <ErrorPageLayout />,
     children: [
       {
         index: true,
         element: <Welcome />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPageLayout />,
       },
       {
         path: "typography",
         element: <MuiTypography />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPageLayout />,
       },
       {
         path: "buttons",
         element: <MuiButton />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPageLayout />,
       },
       {
         path: "textfield",
         element: <MuiTextField />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPageLayout />,
       },
       {
         path: "users",
         element: <Users />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPageLayout />,
       },
       {
         path: "settings",
         element: <div>Settings page</div>,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPageLayout />,
       },
     ],
+  }, {
+    path: "/signin",
+    element: <SignInLayout></SignInLayout>,
+    errorElement: <ErrorPageLayout />,
+  }, {
+    path: "/signup",
+    element: <SignUpLayout></SignUpLayout>,
+    errorElement: <ErrorPageLayout />,
   },
+  {
+    path: "/resetpassword",
+    element: <ResetPasswordLayout></ResetPasswordLayout>,
+    errorElement: <ErrorPageLayout />,
+  }
 ]);
 
 
