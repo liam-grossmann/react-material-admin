@@ -14,54 +14,26 @@ import React from 'react';
 
 // https://mui.com/material-ui/material-icons/?query=tex
 import HomeIcon from '@mui/icons-material/Home';
+import UsersIcon from '@mui/icons-material/AccountBox';
+import ProjectsIcon from '@mui/icons-material/Code';
+import CustomersIcon from '@mui/icons-material/People';
+
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import TitleIcon from '@mui/icons-material/Title';
 import SmartButtonIcon from '@mui/icons-material/SmartButton';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
-import PeopleIcon from '@mui/icons-material/People';
+
+
+import SignInIcon from '@mui/icons-material/Login';
+import SignOutIcon from '@mui/icons-material/Logout';
+import SignUpIcon from '@mui/icons-material/LockOpen';
+import ResetPasswordIcon from '@mui/icons-material/LockReset';
 
 import logo from './../../assets/logo.svg';
 
 
-import { Paper, Typography } from '@mui/material';
-
-interface ListItemLinkProps {
-  to: string;
-  primary: string;
-  icon?: React.ReactElement;
-}
-
-// https://mui.com/material-ui/guides/routing/
-// Use prop forwarding for the routing so that mui links are forwarded to 
-// the react - router rather then the server
-function ListItemLink(props: ListItemLinkProps) {
-  const { to, primary, icon } = props;
-
-
-
-  const renderLink = React.useMemo(
-    () =>
-      React.forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'>>(function Link(
-        itemProps,
-        ref,
-      ) {
-        return <RouterLink to={to} ref={ref} {...itemProps} role={undefined} />;
-      }),
-    [to],
-  );
-
-  return (
-    <ListItem key={primary} disablePadding>
-      <ListItemButton component={renderLink}>
-        {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
-        <ListItemText primary={primary} />
-      </ListItemButton>
-    </ListItem>
-  );
-}
-
-
-
+import { Typography } from '@mui/material';
+import { ListItemLink } from './listItemLink';
 
 
 // go back to this: https://stackblitz.com/run?file=demo.tsx
@@ -96,19 +68,26 @@ export const SidePanel = () => {
         </Toolbar>
         <Divider />
        
-        <ListItemLink   to='/' primary='Home' icon={<HomeIcon />}/>
+        <ListItemLink to='/' primary='Home' icon={<HomeIcon />} />
+        <ListItemLink to='/users' primary='Users' icon={<UsersIcon />} />
+        <ListItemLink to='/projects' primary='Projects' icon={<ProjectsIcon />} />
+        <ListItemLink to='/customers' primary='Customers' icon={<CustomersIcon />} />
+        <Divider />
+
         <ListItemLink  to='/typography' primary='Typography' icon={<TitleIcon />}/>
         <ListItemLink  to='/buttons' primary='Buttons' icon={<SmartButtonIcon />} />
         <ListItemLink  to='/textfield' primary='TextField' icon={<TextFieldsIcon />} />
         <Divider />
-        <ListItemLink  to='/users' primary='Users' icon={<PeopleIcon />} />
+
+        <ListItemLink to='/settings' primary='Settings' icon={<InboxIcon />} />
         <Divider />
-        <ListItemLink   to='/settings' primary='Settings' icon={<InboxIcon />}/>
+
+        <ListItemLink to='/signin' primary='Sign In' icon={<SignInIcon />} />
+        <ListItemLink to='/signin' primary='Logout' icon={<SignOutIcon />} />
+        <ListItemLink to='/signup' primary='Register' icon={<SignUpIcon />} />
+        <ListItemLink to='/resetpassword' primary='Reset Password' icon={<ResetPasswordIcon />} />
             
       </Drawer>
-
-
     </Box>
-
   )
 };

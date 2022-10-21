@@ -14,6 +14,8 @@ import { Users } from './components/Users';
 import SignInLayout from './layouts/signInLayout';
 import SignUpLayout from './layouts/signUpLayout';
 import ResetPasswordLayout from './layouts/resetPasswordLayout';
+import { Customers } from './components/customers/customers';
+import { Projects } from './components/projects/projects';
 
 
 
@@ -38,6 +40,21 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Welcome />,
+        errorElement: <ErrorPageLayout />,
+      },
+      {
+        path: "users",
+        element: <Users />,
+        errorElement: <ErrorPageLayout />,
+      },
+      {
+        path: "projects",
+        element: <Projects />,
+        errorElement: <ErrorPageLayout />,
+      },
+      {
+        path: "customers",
+        element: <Customers />,
         errorElement: <ErrorPageLayout />,
       },
       {

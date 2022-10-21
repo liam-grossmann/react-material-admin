@@ -11,8 +11,8 @@ export const MuiButton = () => {
     const [formats, setFormats] = useState<string[]>([]);
     const [exclusiveFormats, setExclusiveFormats] = useState<string | null>(null);
 
-    console.log(formats);
-    console.log(exclusiveFormats);
+    // console.log(formats);
+    // console.log(exclusiveFormats);
     
     const handleFormatChange = (_event: React.MouseEvent<HTMLElement>, updatedFormats: string[]) => {
         setFormats(updatedFormats);
