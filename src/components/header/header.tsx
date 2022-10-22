@@ -26,7 +26,7 @@ export const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const headerTitle = getHeaderTitleFromLocationPath(location.pathname);
+  const breadCrumbsTiitle = getHeaderTitleFromLocationPath(location.pathname);
 
   const handleLoginClick = () => {
     navigate('signin');
@@ -48,7 +48,7 @@ export const Header = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          {headerTitle}
+          {breadCrumbsTiitle}
         </Typography>
         <Button color="inherit" onClick={handleLoginClick}>Login</Button>
       </Toolbar>

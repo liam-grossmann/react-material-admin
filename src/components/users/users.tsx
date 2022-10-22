@@ -10,6 +10,7 @@ import { DataService } from "../../services/DataService"
 import { Avatar, IconButton } from '@mui/material';
 
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
 
 const dataService = new DataService();
 const users = dataService.getUsers();
@@ -24,6 +25,13 @@ const users = dataService.getUsers();
 
 
 export const Users = () => {
+
+  const navigate = useNavigate();
+
+  const handleEditUserClick = (userId: number) => {
+    navigate('./../users/' + userId);
+}
+
   return (<TableContainer component={Paper}>
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
@@ -53,7 +61,7 @@ export const Users = () => {
             <TableCell>{user.jobTitle}</TableCell>
             <TableCell>{user.hiredDate?.toString()}</TableCell>
             <TableCell>{user.status?.toString()}</TableCell>
-            <TableCell><IconButton aria-label='edit' size='small'><EditIcon></EditIcon></IconButton></TableCell>
+            <TableCell><IconButton aria-label='Edit' title='Edit' size='small' onClick={() => handleEditUserClick(user.id)}><EditIcon></EditIcon></IconButton></TableCell>
           </TableRow>
         ))}
       </TableBody>

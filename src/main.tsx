@@ -1,28 +1,28 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { createTheme, colors, ThemeProvider } from '@mui/material';
-import { MuiButton } from './components/MuiButton';
-import { MuiTypography } from './components/MuiTypography';
-import { MuiTextField } from './components/MuiTextField';
-import { Welcome } from './components/Welcome';
-import ErrorPageLayout from './layouts/errorPageLayout';
-import AppLayout from './layouts/appLayout';
-
-import './index.css'
-
-import SignInLayout from './layouts/signInLayout';
-import SignUpLayout from './layouts/signUpLayout';
-import ResetPasswordLayout from './layouts/resetPasswordLayout';
-import { Customers } from './components/customers/customers';
-import { Projects } from './components/projects/projects';
-
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { Users } from './components/users/users';
+import './index.css'
 
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material';
+import { MuiButton } from './components/MuiButton';
+import { MuiTypography } from './components/MuiTypography';
+import { MuiTextField } from './components/MuiTextField';
+import { Welcome } from './components/Welcome';
+
+import AppLayout from './layouts/appLayout';
+import ErrorPageLayout from './layouts/errorPageLayout';
+import SignInLayout from './layouts/signInLayout';
+import SignUpLayout from './layouts/signUpLayout';
+import ResetPasswordLayout from './layouts/resetPasswordLayout';
+
+import { Users } from './components/users/users';
+import { UserPanel, loader as userLoader } from './components/users/userPanel';
+import { Customers } from './components/customers/customers';
+import { Projects } from './components/projects/projects';
 
 
 
@@ -49,6 +49,12 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <Users />,
+        errorElement: <ErrorPageLayout />,
+      },
+      {
+        path: "users/:userId",
+        element: <UserPanel />,
+        loader: userLoader,
         errorElement: <ErrorPageLayout />,
       },
       {

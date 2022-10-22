@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Container, Divider, FormControlLabel, FormGroup, Link, Switch, TextField, Typography } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import { Button, Container, Divider, FormControlLabel, FormGroup, Switch, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -69,8 +69,8 @@ export default function SignIn() {
 
                 <Divider></Divider>
 
-                <Typography variant='body2'>Don't have an account? <Link href='signup'>Register</Link></Typography>
-                <Typography variant='body2'>Forgot Password? <Link href='resetpassword'>Reset Password</Link></Typography>
+                <Typography variant='body2'>Don't have an account? <Link to='./../signup'>Register</Link></Typography>
+                <Typography variant='body2'>Forgot Password? <Link to='./../resetpassword'>Reset Password</Link></Typography>
          
 
             </Stack>

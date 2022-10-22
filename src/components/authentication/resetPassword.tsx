@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Container, Divider, Link, Stack, TextField, Typography } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import { Button, Container, Divider, Stack, TextField, Typography } from "@mui/material";
 
 export default function ResetPassword() {
 
@@ -39,7 +39,7 @@ export default function ResetPassword() {
 
                 <Divider></Divider>
 
-                <Typography variant='body2'>Already have an account? <Link href='signin'>Sign In</Link></Typography>
+                <Typography variant='body2'>Already have an account? <Link to='./../signin'>Sign In</Link></Typography>
 
             </Stack>
         </Container>

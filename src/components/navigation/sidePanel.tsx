@@ -64,7 +64,9 @@ export const SidePanel = () => {
           <div className='logoImage'>
             <img src={logo}></img>
           </div>
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Monitron</Typography>
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Monitron
+          <Typography variant="caption" display="block">Version 0.0.1</Typography>
+          </Typography>
         </Toolbar>
         <Divider />
        
@@ -74,10 +76,12 @@ export const SidePanel = () => {
         <ListItemLink to='/customers' primary='Customers' icon={<CustomersIcon />} />
         <Divider />
 
+        {/*
         <ListItemLink  to='/typography' primary='Typography' icon={<TitleIcon />}/>
         <ListItemLink  to='/buttons' primary='Buttons' icon={<SmartButtonIcon />} />
         <ListItemLink  to='/textfield' primary='TextField' icon={<TextFieldsIcon />} />
         <Divider />
+      */}
 
         <ListItemLink to='/settings' primary='Settings' icon={<InboxIcon />} />
         <Divider />

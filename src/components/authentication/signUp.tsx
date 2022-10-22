@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Container, Divider, FormControlLabel, FormGroup, Link, Switch, TextField, Typography } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import { Button, Container, Divider, FormControlLabel, FormGroup, Switch, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -82,14 +82,14 @@ export default function SignUp() {
 
                 <FormGroup>
                     <FormControlLabel control={<Switch size="small" />}
-                        label={<Typography variant='body2'>I have read the <Link href=''>terms and conditions</Link></Typography>} />
+                        label={<Typography variant='body2'>I have read the <Link to=''>terms and conditions</Link></Typography>} />
                 </FormGroup>
     
                 <Button variant='contained' color='primary' onClick={handleRegisterClick}>Register</Button>
 
                 <Divider></Divider>
 
-                <Typography variant='body2'>Already have an account? <Link href='signin'>Sign In</Link></Typography>
+                <Typography variant='body2'>Already have an account? <Link to='./../signin'>Sign In</Link></Typography>
 
             </Stack>
         </Container>
