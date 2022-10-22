@@ -10,25 +10,29 @@ import ErrorPageLayout from './layouts/errorPageLayout';
 import AppLayout from './layouts/appLayout';
 
 import './index.css'
-import { Users } from './components/Users';
+
 import SignInLayout from './layouts/signInLayout';
 import SignUpLayout from './layouts/signUpLayout';
 import ResetPasswordLayout from './layouts/resetPasswordLayout';
 import { Customers } from './components/customers/customers';
 import { Projects } from './components/projects/projects';
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { Users } from './components/users/users';
 
 
 
-/* use     <ThemeProvider theme={theme}> below to use this theme
+
 const theme = createTheme({
-  palette: {
-    secondary: {
-      main: colors.orange[500]
-    }
-  }
-}) 
-*/
+  typography: {
+    // In Chinese and Japanese the characters are usually larger,
+    // so a smaller fontsize may be appropriate.
+    fontSize: 12.5,
+  },
+});
 
 
 const router = createBrowserRouter([
@@ -102,6 +106,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+      </ThemeProvider>
   </React.StrictMode>
 )
