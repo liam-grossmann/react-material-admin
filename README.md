@@ -16,7 +16,7 @@ https://mockaroo.com/ generate data
 
 
 
-Components
+Components.
 
 Table
 https://mui.com/material-ui/react-table/
