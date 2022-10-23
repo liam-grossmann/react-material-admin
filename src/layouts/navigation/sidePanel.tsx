@@ -65,7 +65,7 @@ export const SidePanel = () => {
             <img src={logo}></img>
           </div>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Monitron
-          <Typography variant="caption" display="block">Version 0.0.1</Typography>
+          <Typography variant="caption" display="block">Version 0.0.2</Typography>
           </Typography>
         </Toolbar>
         <Divider />
