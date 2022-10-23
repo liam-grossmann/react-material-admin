@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { SidePanel } from "../components/navigation/sidePanel";
+import { SidePanel } from "../layouts/navigation/sidePanel";
 
-export default function AppLayout() {
+export default function AppPage() {
     return (
         <>
             <div id="sidebar">

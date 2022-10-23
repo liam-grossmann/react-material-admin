@@ -1,5 +1,5 @@
 import { IUser, User } from "../domain/User";
-import users from './users.json';
+import users from './../data/users.json';
 import avatar1 from './../assets/avatars/1.jpeg';
 import avatar2 from './../assets/avatars/2.jpeg';
 import avatar3 from './../assets/avatars/3.jpeg';
