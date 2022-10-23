@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Form } from "react-router-dom";
 import { Button, Container, Divider, Stack, TextField, Typography } from "@mui/material";
 
 export default function ResetPassword() {
@@ -26,15 +26,19 @@ export default function ResetPassword() {
         <Container maxWidth="xs">
             <Stack spacing={2}>
                 <Typography variant='h5' textAlign='center'>Forgot Password</Typography>
-                <TextField label='Email Address'
-                    required variant='outlined'
-                    size='small'
-                    error={!values.emailAddress}
-                    value={values.emailAddress}
-                    onChange={handleChange('emailAddress')}
-                    helperText={!values.emailAddress ? 'Email is required' : ''}>
-                </TextField>
-            
+                
+                <Form>
+                    <TextField fullWidth
+                        label='Email Address'
+                        required variant='outlined'
+                        size='small'
+                        error={!values.emailAddress}
+                        value={values.emailAddress}
+                        onChange={handleChange('emailAddress')}
+                        helperText={!values.emailAddress ? 'Email is required' : ''}>
+                    </TextField>
+                </Form>
+                
                 <Button variant='contained' color='primary' onClick={handleSendEmailClick}>Send Email</Button>
 
                 <Divider></Divider>

@@ -11,7 +11,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { MuiButton } from './features/muiExamples/MuiButton';
 import { MuiTypography } from './features/muiExamples/MuiTypography';
 import { MuiTextField } from './features/muiExamples/MuiTextField';
-import { Welcome } from './features/dashboard/Welcome';
+import { Dashboard } from './features/dashboard/dashboard';
 
 import AppPage from './pages/appPage';
 import ErrorPage from './pages/errorPage';
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Welcome />,
+        element: <Dashboard />,
         errorElement: <ErrorPage />,
       },
       {

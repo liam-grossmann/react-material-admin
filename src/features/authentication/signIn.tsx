@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Form } from "react-router-dom";
 import { Button, Container, Divider, FormControlLabel, FormGroup, Switch, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import GoogleIcon from '@mui/icons-material/Google';
@@ -41,24 +41,30 @@ export default function SignIn() {
         <Container maxWidth="xs">
             <Stack spacing={2}>
                 <Typography variant='h5' textAlign='center'>Sign In</Typography>
-                <TextField label='Email Address'
-                    required variant='outlined'
-                    size='small'
-                    error={!values.emailAddress}
-                    value={values.emailAddress}
-                    onChange={handleChange('emailAddress')}
-                    helperText={!values.emailAddress ? 'Email is required' : ''}>
-                </TextField>
-            
-                <TextField label='Password'
-                    required variant='outlined'
-                    size='small'
-                    type='password'
-                    error={!values.password}
-                    value={values.password}
-                    onChange={handleChange('password')}
-                    helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'}>
-                </TextField>
+
+                <Form>
+                    <TextField fullWidth
+                        label='Email Address'
+                        required variant='outlined'
+                        size='small'
+                        error={!values.emailAddress}
+                        value={values.emailAddress}
+                        onChange={handleChange('emailAddress')}
+                        helperText={!values.emailAddress ? 'Email is required' : ''}>
+                    </TextField>
+                
+                    <TextField fullWidth
+                        label='Password'
+                        required variant='outlined'
+                        size='small'
+                        type='password'
+                        error={!values.password}
+                        value={values.password}
+                        onChange={handleChange('password')}
+                        helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'
+                        }>
+                    </TextField>
+                </Form>
 
                 <FormGroup>
                     <FormControlLabel control={<Switch size="small" />}
