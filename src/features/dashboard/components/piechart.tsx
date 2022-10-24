@@ -4,12 +4,24 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+    },
+    title: {
+      display: true,
+      text: 'Customers by Region',
+    },
+  },
+};
+
 export const data = {
   labels: ['North America', 'Western Europe', 'Eastern Europe', 'Middle East & Africa', 'Australasia'],
   datasets: [
     {
-      label: '# of Votes',
-      data: [19, 12, 5, 3, 2],
+      data: [19450, 12120, 5431, 2956, 1902],
       backgroundColor: [
         'rgba(20, 94, 168, 0.9)',
         'rgba(54, 162, 235, 0.9)',
@@ -30,5 +42,5 @@ export const data = {
 };
 
 export function PieChart() {
-  return <Pie data={data} />;
+  return <Pie options={options}  data={data} />;
 }

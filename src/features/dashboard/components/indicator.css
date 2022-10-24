@@ -1,0 +1,19 @@
+.header-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.header-icon {
+}
+
+.header-title-value {
+  display: grid;
+  grid-template-columns: auto;
+  text-align: right;
+}
+
+.xx {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}

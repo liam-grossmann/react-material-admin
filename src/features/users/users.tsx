@@ -41,7 +41,6 @@ export const Users = () => {
           <TableCell>Email</TableCell>
           <TableCell>Department</TableCell>
           <TableCell>Job Title</TableCell>
-          <TableCell>Hired Date</TableCell>
           <TableCell>Status</TableCell>
           <TableCell>Action</TableCell>
         </TableRow>
@@ -59,7 +58,6 @@ export const Users = () => {
             <TableCell>{user.emailAddress}</TableCell>
             <TableCell>{user.department}</TableCell>
             <TableCell>{user.jobTitle}</TableCell>
-            <TableCell>{user.hiredDate?.toString()}</TableCell>
             <TableCell>{user.status?.toString()}</TableCell>
             <TableCell><IconButton aria-label='Edit' title='Edit' size='small' onClick={() => handleEditUserClick(user.id)}><EditIcon></EditIcon></IconButton></TableCell>
           </TableRow>
