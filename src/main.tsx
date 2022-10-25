@@ -24,8 +24,10 @@ import { UserPanel, loader as userLoader } from './features/users/userPanel';
 import { Customers } from './features/customers/customers';
 import { CustomerPanel, loader as customerLoader } from './features/customers/customerPanel';
 import { Projects } from './features/projects/projects';
-import { Customer } from './domain/Customer';
-import MuiGrid from './features/muiExamples/MuiGrid';
+
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { MuiDatePicker } from './features/muiExamples/MuiDatePicker';
 
 
 
@@ -98,7 +100,7 @@ const router = createBrowserRouter([
       },
       {
         path: "settings",
-        element: <div>Settings here</div>,
+        element: <MuiDatePicker/>,
         errorElement: <ErrorPage />,
       },
     ],
@@ -121,8 +123,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+      <LocalizationProvider dateAdapter={AdapterMoment}>
       <ThemeProvider theme={theme}>
         <RouterProvider router={router} />
       </ThemeProvider>
+      </LocalizationProvider>
   </React.StrictMode>
 )

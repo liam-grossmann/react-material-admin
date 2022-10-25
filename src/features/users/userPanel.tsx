@@ -74,6 +74,7 @@ export const UserPanel = () => {
           <TextField fullWidth
             label='Date of Hire'
             required variant='outlined'
+            type="date"
             size='small'
             error={!user.hiredDate}
             value={user.hiredDate}
