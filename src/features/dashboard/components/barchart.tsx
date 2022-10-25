@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { blue } from '@mui/material/colors';
 
 ChartJS.register(
   CategoryScale,
@@ -40,12 +41,12 @@ export const data = {
     {
       label: 'Product Sales',
       data: [2000, 1800, 1400, 2400, 2800, 2500, 2100],
-      backgroundColor: 'rgba(206, 228, 249, 0.5)',
+      backgroundColor: blue[100],
     },
     {
       label: 'Subscriptions',
       data: [3000, 3500, 4200, 4300, 5000, 5600, 7800],
-      backgroundColor: 'rgba(25, 118, 210, 0.5)',
+      backgroundColor: blue[500],
     },
   ],
 };

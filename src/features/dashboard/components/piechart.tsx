@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import { blue } from '@mui/material/colors';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -18,23 +19,23 @@ export const options = {
 };
 
 export const data = {
-  labels: ['North America', 'Western Europe', 'Eastern Europe', 'Middle East & Africa', 'Australasia'],
+  labels: ['NA', 'WE', 'EE', 'ME&A', 'AP'],
   datasets: [
     {
       data: [19450, 12120, 5431, 2956, 1902],
       backgroundColor: [
-        'rgba(20, 94, 168, 0.9)',
-        'rgba(54, 162, 235, 0.9)',
-        'rgba(25, 118, 210, 0.5)',
-        'rgba(108, 173, 237, 0.3)',
-        'rgba(206, 228, 249, 0.2)',
+        blue[800],
+        blue[600],
+        blue[400],
+        blue[200],
+        blue[100],
       ],
       borderColor: [
-        'rgba(20, 94, 168, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(25, 118, 210, 1)',
-        'rgba(108, 173, 237, 1)',
-        'rgba(206, 228, 249, 1)',
+        blue[900],
+        blue[700],
+        blue[500],
+        blue[300],
+        blue[100],
       ],
       borderWidth: 1,
     },
