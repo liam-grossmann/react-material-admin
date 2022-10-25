@@ -25,6 +25,7 @@ import { Customers } from './features/customers/customers';
 import { CustomerPanel, loader as customerLoader } from './features/customers/customerPanel';
 import { Projects } from './features/projects/projects';
 import { Customer } from './domain/Customer';
+import MuiGrid from './features/muiExamples/MuiGrid';
 
 
 
@@ -97,7 +98,7 @@ const router = createBrowserRouter([
       },
       {
         path: "settings",
-        element: <div>Settings page</div>,
+        element: <div>Settings here</div>,
         errorElement: <ErrorPage />,
       },
     ],

@@ -1,11 +1,7 @@
+import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { DataService } from '../../services/DataService';
-import { Avatar, IconButton } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-
-const dataService = new DataService();
-const customers = dataService.getCustomers();
 
 const columns: GridColDef[] = [
   {
@@ -40,16 +36,11 @@ const columns: GridColDef[] = [
   }
 ];
 
+const dataService = new DataService();
+const customers = dataService.getCustomers();
 const rows = customers;
 
-export const Customers = () => {
-
-    const navigate = useNavigate();
-
-    const handleEditCustomerClick = (customerId: string) => {
-      navigate('./../customers/' + customerId);
-    }
-    
+export default function MuiGrid() {
   return (
     <Box sx={{ height: '525px', width: '100%' }}>
       <DataGrid
@@ -64,5 +55,3 @@ export const Customers = () => {
     </Box>
   );
 }
-
-

@@ -37,11 +37,8 @@ export class DataService {
 
     public getCustomers(): ICustomer[] {
         let listToReturn = new Array<ICustomer>();
-        customerRawData.forEach((dataItem, i) => {
-            i = i + 1;
-            if (i < 50) {
-                listToReturn.push(new Customer(dataItem));
-            }
+        customerRawData.forEach((dataItem) => {
+            listToReturn.push(new Customer(dataItem));     
         });
         listToReturn = listToReturn.sort((a, b) =>  a.firstName > b.firstName ? 1 : -1)
         return listToReturn;
