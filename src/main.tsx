@@ -22,7 +22,9 @@ import ResetPasswordPage from './pages/resetPasswordPage';
 import { Users } from './features/users/users';
 import { UserPanel, loader as userLoader } from './features/users/userPanel';
 import { Customers } from './features/customers/customers';
+import { CustomerPanel, loader as customerLoader } from './features/customers/customerPanel';
 import { Projects } from './features/projects/projects';
+import { Customer } from './domain/Customer';
 
 
 
@@ -65,6 +67,12 @@ const router = createBrowserRouter([
       {
         path: "customers",
         element: <Customers />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "customers/:customerId",
+        element: <CustomerPanel />,
+        loader: customerLoader,
         errorElement: <ErrorPage />,
       },
       {
