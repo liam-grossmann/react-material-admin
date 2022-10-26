@@ -13,33 +13,35 @@ export default function ResetPassword() {
     const [values, setValues] = useState<State>({
         emailAddress: '',
     });
-    
+
     const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({ ...values, [prop]: event.target.value });
+        setValues({ ...values, [prop]: event.target.value });
     };
 
     const handleSendEmailClick = () => {
         navigate('/');
     }
-    
+
     return (
         <Container maxWidth="xs">
             <Stack spacing={2}>
                 <Typography variant='h5' textAlign='center'>Forgot Password</Typography>
-                
-                <Form>
-                    <TextField fullWidth
-                        label='Email Address'
-                        required variant='outlined'
-                        size='small'
-                        error={!values.emailAddress}
-                        value={values.emailAddress}
-                        onChange={handleChange('emailAddress')}
-                        helperText={!values.emailAddress ? 'Email is required' : ''}>
-                    </TextField>
+
+                <Form className="passwordForm">
+                    <Stack spacing={2}>
+                        <TextField fullWidth
+                            label='Email Address'
+                            required variant='outlined'
+                            size='small'
+                            error={!values.emailAddress}
+                            value={values.emailAddress}
+                            onChange={handleChange('emailAddress')}
+                            helperText={!values.emailAddress ? 'Email is required' : ''}>
+                        </TextField>
+                    </Stack>
                 </Form>
-                
-                <Button variant='contained' color='primary' onClick={handleSendEmailClick}>Send Email</Button>
+
+                <Button variant='contained' color='primary' onClick={() => handleSendEmailClick()}>Send Email</Button>
 
                 <Divider></Divider>
 

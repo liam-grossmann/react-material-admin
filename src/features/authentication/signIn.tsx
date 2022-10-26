@@ -27,57 +27,59 @@ export default function SignIn() {
         emailAddress: '',
         password: ''
     });
-    
+
     const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({ ...values, [prop]: event.target.value });
+        setValues({ ...values, [prop]: event.target.value });
     };
 
     const handleSignInClick = () => {
         navigate('/');
     }
-    
+
     return (
 
         <Container maxWidth="xs">
-            <Stack spacing={2}>
+            <Stack spacing={4}>
                 <Typography variant='h5' textAlign='center'>Sign In</Typography>
 
-                <Form>
-                    <TextField fullWidth
-                        label='Email Address'
-                        required variant='outlined'
-                        size='small'
-                        error={!values.emailAddress}
-                        value={values.emailAddress}
-                        onChange={handleChange('emailAddress')}
-                        helperText={!values.emailAddress ? 'Email is required' : ''}>
-                    </TextField>
-                
-                    <TextField fullWidth
-                        label='Password'
-                        required variant='outlined'
-                        size='small'
-                        type='password'
-                        error={!values.password}
-                        value={values.password}
-                        onChange={handleChange('password')}
-                        helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'
-                        }>
-                    </TextField>
+                <Form className="passwordForm">
+                    <Stack spacing={2}>
+                        <TextField fullWidth
+                            label='Email Address'
+                            required variant='outlined'
+                            size='small'
+                            error={!values.emailAddress}
+                            value={values.emailAddress}
+                            onChange={handleChange('emailAddress')}
+                            helperText={!values.emailAddress ? 'Email is required' : ''}>
+                        </TextField>
+
+                        <TextField fullWidth
+                            label='Password'
+                            required variant='outlined'
+                            size='small'
+                            type='password'
+                            error={!values.password}
+                            value={values.password}
+                            onChange={handleChange('password')}
+                            helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'
+                            }>
+                        </TextField>
+                    </Stack>
                 </Form>
 
                 <FormGroup>
                     <FormControlLabel control={<Switch size="small" />}
                         label={<Typography variant='body2'>Remember me</Typography>} />
                 </FormGroup>
-    
-                <Button variant='contained' color='primary' onClick={handleSignInClick}>Sign In</Button>
+
+                <Button variant='contained' color='primary' onClick={() => handleSignInClick()}>Sign In</Button>
 
                 <Divider></Divider>
 
                 <Typography variant='body2'>Don't have an account? <Link to='./../signup'>Register</Link></Typography>
                 <Typography variant='body2'>Forgot Password? <Link to='./../resetpassword'>Reset Password</Link></Typography>
-         
+
 
             </Stack>
         </Container>

@@ -104,6 +104,16 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
+        path: "sales",
+        element: <div>Sales</div>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "tickets",
+        element: <div>Tickets</div>,
+        errorElement: <ErrorPage />,
+      },
+      {
         path: "settings",
         element: <MuiDatePicker/>,
         errorElement: <ErrorPage />,

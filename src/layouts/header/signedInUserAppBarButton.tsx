@@ -42,7 +42,7 @@ export const SignedInUserAppBarButton = (props: ISignedInUserAppBarButtonProps) 
   return (
     <>
       {!signedInUser ?
-        <Button color="inherit" onClick={handleLoginClick}>Login</Button>
+        <Button color="inherit" onClick={() => handleLoginClick()}>Login</Button>
         :
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">

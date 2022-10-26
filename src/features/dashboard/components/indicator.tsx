@@ -5,20 +5,27 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import './indicator.css';
 
 export interface IndicatorProps {
+  id: string;
   icon: JSX.Element;
   title: string;
   valueText: string;
   isUp: boolean;
   changeText: string;
+  onClick: any;
 }
 
 export const Indicator = (props: IndicatorProps) => {
 
+  const [id, setId] = useState(props.id);
   const [icon, setIcon] = useState(() => props.icon);
   const [title, setTitle] = useState(props.title);
   const [valueText, setValueText] = useState(props.valueText);
   const [isUp, setIsUp] = useState(props.isUp);
   const [changeText, setChangeText] = useState(props.changeText);
+
+  const raiseClickEvent = (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    props.onClick(e, id);
+  }
 
   return (
     <Card sx={{ maxWidth: 300 }}>
@@ -46,7 +53,7 @@ export const Indicator = (props: IndicatorProps) => {
         <Divider></Divider>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={(e) => raiseClickEvent(e, id)}>Learn More</Button>
       </CardActions>
     </Card>
   );

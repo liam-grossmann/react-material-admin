@@ -12,6 +12,8 @@ import UsersIcon from '@mui/icons-material/AccountBox';
 import ProjectsIcon from '@mui/icons-material/Code';
 import CustomersIcon from '@mui/icons-material/People';
 
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import BugReportIcon from '@mui/icons-material/BugReport';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import TitleIcon from '@mui/icons-material/Title';
 import SmartButtonIcon from '@mui/icons-material/SmartButton';
@@ -67,7 +69,7 @@ export const SidePanel = (props: ISidePanelProps) => {
             <img src={logo}></img>
           </div>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>Monitron
-          <Typography variant="caption" display="block">Version 0.0.2</Typography>
+          <Typography variant="caption" display="block">Version 0.0.3</Typography>
           </Typography>
         </Toolbar>
         <Divider />
@@ -85,6 +87,8 @@ export const SidePanel = (props: ISidePanelProps) => {
         <Divider />
       */}
 
+        <ListItemLink to='/sales' primary='Sales' icon={<AttachMoneyIcon />} />
+        <ListItemLink to='/tickets' primary='Tickets' icon={<BugReportIcon />} />
         <ListItemLink to='/settings' primary='Settings' icon={<InboxIcon />} />
         <Divider />
 

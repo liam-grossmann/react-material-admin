@@ -17,7 +17,6 @@ export const UserPanel = () => {
   const [user, setUser] = useState<IUser>(useLoaderData() as IUser);
   
   const handleChange = (prop: keyof IUser) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.debug(prop);
     setUser({ ...user, [prop]: event.target.value });
   };
 
@@ -126,8 +125,8 @@ export const UserPanel = () => {
         
         <Grid item xs={6}>
           <Stack direction='row' spacing={2}>
-            <Button variant='contained' onClick={handleSaveButtonClick}>Save</Button>
-            <Button variant='contained' color='secondary' onClick={handleCancelButtonClick}>Cancel</Button>
+            <Button variant='contained' onClick={() => handleSaveButtonClick()}>Save</Button>
+            <Button variant='contained' color='secondary' onClick={() => handleCancelButtonClick()}>Cancel</Button>
           </Stack>
         </Grid>
 

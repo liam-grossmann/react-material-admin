@@ -31,18 +31,9 @@ export interface IHeaderProps {
 } 
 
 export const Header = (props: IHeaderProps) => {
-  
 
-
-  const navigate = useNavigate();
   const location = useLocation();
   const breadCrumbsTiitle = getHeaderTitleFromLocationPath(location.pathname);
-
-  const handleLoginClick = () => {
-    navigate('signin');
-  }
-
-
 
   return (
     <AppBar
@@ -63,14 +54,8 @@ export const Header = (props: IHeaderProps) => {
           {breadCrumbsTiitle}
         </Typography>
 
-
         <SignedInUserAppBarButton signedInUser={props.signedInUser} />
         
-
-
-
-
-
       </Toolbar>
     </AppBar>
   )

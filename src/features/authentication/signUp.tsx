@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Form } from "react-router-dom";
 import { Button, Container, Divider, FormControlLabel, FormGroup, Switch, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import GoogleIcon from '@mui/icons-material/Google';
@@ -27,65 +27,70 @@ export default function SignUp() {
         lastName: '',
         emailAddress: '',
         password: ''
-      });
-    
+    });
+
     const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({ ...values, [prop]: event.target.value });
+        setValues({ ...values, [prop]: event.target.value });
     };
 
     const handleRegisterClick = () => {
         navigate('/');
     }
-    
+
     return (
 
         <Container maxWidth="xs">
             <Stack spacing={2}>
                 <Typography variant='h5' textAlign='center'>Sign Up</Typography>
-                
-                <TextField label='First name'
-                    required variant='outlined'
-                    size='small'
-                    error={!values.firstName}
-                    value={values.firstName}
-                    onChange={handleChange('firstName')}
-                    helperText={!values.firstName ? 'First name is required' : ''}>
-                </TextField>
-                           
-                <TextField label='Last name'
-                    required variant='outlined'
-                    size='small'
-                    error={!values.lastName}
-                    value={values.lastName}
-                    onChange={handleChange('lastName')}
-                    helperText={!values.firstName ? 'Last name is required' : ''}>
-                </TextField>
 
-                <TextField label='Email Address'
-                    required variant='outlined'
-                    size='small'
-                    error={!values.emailAddress}
-                    value={values.emailAddress}
-                    onChange={handleChange('emailAddress')}
-                    helperText={!values.emailAddress ? 'Email is required' : ''}>
-                </TextField>
-            
-                <TextField label='Password'
-                    required variant='outlined'
-                    size='small'
-                    type='password'
-                    error={!values.password}
-                    value={values.password}
-                    onChange={handleChange('password')}
-                    helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'}>
-                </TextField>
+                <Form>
+                    <Stack spacing={2}>
+                        <TextField label='First name'
+                            required variant='outlined'
+                            size='small'
+                            error={!values.firstName}
+                            value={values.firstName}
+                            onChange={handleChange('firstName')}
+                            helperText={!values.firstName ? 'First name is required' : ''}>
+                        </TextField>
+
+                        <TextField label='Last name'
+                            required variant='outlined'
+                            size='small'
+                            error={!values.lastName}
+                            value={values.lastName}
+                            onChange={handleChange('lastName')}
+                            helperText={!values.firstName ? 'Last name is required' : ''}>
+                        </TextField>
+
+                        <TextField label='Email Address'
+                            required variant='outlined'
+                            size='small'
+                            error={!values.emailAddress}
+                            value={values.emailAddress}
+                            onChange={handleChange('emailAddress')}
+                            helperText={!values.emailAddress ? 'Email is required' : ''}>
+                        </TextField>
+
+                        <TextField label='Password'
+                            required variant='outlined'
+                            size='small'
+                            type='password'
+                            error={!values.password}
+                            value={values.password}
+                            onChange={handleChange('password')}
+                            helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'}>
+                        </TextField>
+
+                    </Stack>
+                </Form>
 
                 <FormGroup>
                     <FormControlLabel control={<Switch size="small" />}
                         label={<Typography variant='body2'>I have read the <Link to=''>terms and conditions</Link></Typography>} />
                 </FormGroup>
-    
-                <Button variant='contained' color='primary' onClick={handleRegisterClick}>Register</Button>
+
+                <Button variant='contained' color='primary' onClick={() => handleRegisterClick()}>Register</Button>
 
                 <Divider></Divider>
 
