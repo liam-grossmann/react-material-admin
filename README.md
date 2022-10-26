@@ -31,19 +31,18 @@ npm install @mui/x-data-grid-premium
 
 ## Todo
 
-1) Customers screen
 2) Products screen
 3) Subscriptions screen
 4) Side bar collapse
 5) Tidy up authorisations screens
-6) Put avatar on main header bar
+
 7) Style side nav
 8) Dark style
 9) Sub menus
 10) Fix breadbrumbs - use the react router state / location
 11) Scroll restoration https://v5.reactrouter.com/web/guides/scroll-restoration
 12) Notifications on header bar
-
+13) Search textbox on header bar
 
 
 10) Develop this functionality https://github.com/creativetimofficial/material-dashboard-react

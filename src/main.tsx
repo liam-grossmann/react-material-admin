@@ -28,6 +28,7 @@ import { Projects } from './features/projects/projects';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { MuiDatePicker } from './features/muiExamples/MuiDatePicker';
+import { DataService } from './services/DataService';
 
 
 
@@ -39,11 +40,15 @@ const theme = createTheme({
   },
 });
 
+let dataService = new DataService();
+let signedInUser = dataService.getUser(5);
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppPage />,
+    element: <AppPage signedInUser={signedInUser} />,
     errorElement: <ErrorPage />,
     children: [
       {

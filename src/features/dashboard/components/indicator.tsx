@@ -1,17 +1,8 @@
-import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, Icon, IconButton, SvgIcon, SvgIconTypeMap, Typography } from "@mui/material"
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { Button, Card, CardActions, CardContent, CardMedia, Divider, Typography } from "@mui/material"
 import { useState } from "react";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
-
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import  './indicator.css';
-import { CenterFocusStrong } from "@mui/icons-material";
+import './indicator.css';
 
 export interface IndicatorProps {
   icon: JSX.Element;
@@ -21,18 +12,13 @@ export interface IndicatorProps {
   changeText: string;
 }
 
-
-
 export const Indicator = (props: IndicatorProps) => {
 
-  //console.debug(props);
   const [icon, setIcon] = useState(() => props.icon);
   const [title, setTitle] = useState(props.title);
   const [valueText, setValueText] = useState(props.valueText);
   const [isUp, setIsUp] = useState(props.isUp);
   const [changeText, setChangeText] = useState(props.changeText);
-
-
 
   return (
     <Card sx={{ maxWidth: 300 }}>
@@ -40,31 +26,23 @@ export const Indicator = (props: IndicatorProps) => {
         <CardMedia>
           <div className="header-container">
             <div className="header-icon">
-                <Typography  component="div">{icon}</Typography>
+              <Typography component="div">{icon}</Typography>
             </div>
             <div className="header-title-value">
               <Typography variant="body2" color="text.secondary">
                 {title}
               </Typography>
-              <Typography  variant="h4">
+              <Typography variant="h4">
                 {valueText}
               </Typography>
             </div>
-
-        
-         
-     
-
           </div>
         </CardMedia>
-  
-        <Typography className="xx"  variant="subtitle1" color="text.secondary" >
-        {isUp ? <ArrowDropUpIcon color='success' fontSize="large"  /> : <ArrowDropDownIcon color='error' fontSize="large"  />}{changeText}
-            </Typography>
-          
 
- 
-        
+        <Typography className="xx" variant="subtitle1" color="text.secondary" >
+          {isUp ? <ArrowDropUpIcon color='success' fontSize="large" /> : <ArrowDropDownIcon color='error' fontSize="large" />}{changeText}
+        </Typography>
+
         <Divider></Divider>
       </CardContent>
       <CardActions>

@@ -1,16 +1,20 @@
 import { Outlet } from "react-router-dom";
+import { IUser } from "../domain/User";
 import { SidePanel } from "../layouts/navigation/sidePanel";
 
-export default function AppPage() {
+export interface IAppPageProps {
+    signedInUser: IUser;
+}
+
+export default function AppPage(props: IAppPageProps) {
     return (
         <>
             <div id="sidebar">
-                <SidePanel></SidePanel>
-            </div>    
+                <SidePanel signedInUser={props.signedInUser}></SidePanel>
+            </div>
             <div id="detail">
                 <Outlet />
             </div>
         </>
     );
 }
-  

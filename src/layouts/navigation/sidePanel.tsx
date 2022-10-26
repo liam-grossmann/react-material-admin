@@ -3,14 +3,8 @@ import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 
 import { Header } from '../header/header';
-import { Link as RouterLink, LinkProps as RouterLinkProps, useLocation, } from 'react-router-dom';
-import React from 'react';
 
 // https://mui.com/material-ui/material-icons/?query=tex
 import HomeIcon from '@mui/icons-material/Home';
@@ -23,7 +17,6 @@ import TitleIcon from '@mui/icons-material/Title';
 import SmartButtonIcon from '@mui/icons-material/SmartButton';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 
-
 import SignInIcon from '@mui/icons-material/Login';
 import SignOutIcon from '@mui/icons-material/Logout';
 import SignUpIcon from '@mui/icons-material/LockOpen';
@@ -34,18 +27,27 @@ import logo from './../../assets/logo.svg';
 
 import { Typography } from '@mui/material';
 import { ListItemLink } from './listItemLink';
+import { IUser } from '../../domain/User';
 
 
 // go back to this: https://stackblitz.com/run?file=demo.tsx
 // this needs work. The side panel needs a lot of work.
-export const SidePanel = () => {
+
+
+
+export interface ISidePanelProps {
+  signedInUser: IUser;
+} 
+
+
+export const SidePanel = (props: ISidePanelProps) => {
 
   const drawerWidth = 14;
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Header></Header>
+      <Header signedInUser={props.signedInUser}></Header>
 
       <Drawer
         sx={{

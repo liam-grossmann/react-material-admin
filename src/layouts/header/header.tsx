@@ -5,6 +5,9 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useLocation, useNavigate } from "react-router-dom";
+import { IUser } from '../../domain/User';
+import { useState } from 'react';
+import { SignedInUserAppBarButton } from './signedInUserAppBarButton';
 
 
 // TODO: Pass this in as a prop
@@ -22,7 +25,14 @@ function getHeaderTitleFromLocationPath(pathName : string) : string {
   return valueToReturn;
 }
 
-export const Header = () => {
+
+export interface IHeaderProps {
+  signedInUser: IUser;
+} 
+
+export const Header = (props: IHeaderProps) => {
+  
+
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,6 +41,8 @@ export const Header = () => {
   const handleLoginClick = () => {
     navigate('signin');
   }
+
+
 
   return (
     <AppBar
@@ -50,7 +62,15 @@ export const Header = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           {breadCrumbsTiitle}
         </Typography>
-        <Button color="inherit" onClick={handleLoginClick}>Login</Button>
+
+
+        <SignedInUserAppBarButton signedInUser={props.signedInUser} />
+        
+
+
+
+
+
       </Toolbar>
     </AppBar>
   )
