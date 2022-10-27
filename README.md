@@ -43,6 +43,8 @@ npm install @mui/x-data-grid-premium
 11) Scroll restoration https://v5.reactrouter.com/web/guides/scroll-restoration
 12) Notifications on header bar
 13) Search textbox on header bar
+14) Sales screen
+15) Trello board
 
 
 10) Develop this functionality https://github.com/creativetimofficial/material-dashboard-react

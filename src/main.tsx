@@ -27,8 +27,9 @@ import { Projects } from './features/projects/projects';
 
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { MuiDatePicker } from './features/muiExamples/MuiDatePicker';
 import { DataService } from './services/DataService';
+import { SecurityContext } from './contexts/securityContext';
+import { Settings } from './features/settings/settings';
 
 
 
@@ -41,14 +42,14 @@ const theme = createTheme({
 });
 
 let dataService = new DataService();
-let signedInUser = dataService.getUser(5);
+let signedInUser = dataService.getUser(3);
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppPage signedInUser={signedInUser} />,
+    element: <AppPage />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -115,7 +116,7 @@ const router = createBrowserRouter([
       },
       {
         path: "settings",
-        element: <MuiDatePicker/>,
+        element: <Settings />,
         errorElement: <ErrorPage />,
       },
     ],
@@ -140,7 +141,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
       <LocalizationProvider dateAdapter={AdapterMoment}>
       <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
+        <SecurityContext.Provider value={signedInUser}>
+          <RouterProvider router={router} />
+        </SecurityContext.Provider>
       </ThemeProvider>
       </LocalizationProvider>
   </React.StrictMode>

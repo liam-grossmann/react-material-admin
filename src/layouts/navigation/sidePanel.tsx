@@ -29,27 +29,21 @@ import logo from './../../assets/logo.svg';
 
 import { Typography } from '@mui/material';
 import { ListItemLink } from './listItemLink';
-import { IUser } from '../../domain/User';
+
 
 
 // go back to this: https://stackblitz.com/run?file=demo.tsx
 // this needs work. The side panel needs a lot of work.
 
 
-
-export interface ISidePanelProps {
-  signedInUser: IUser;
-} 
-
-
-export const SidePanel = (props: ISidePanelProps) => {
+export const SidePanel = () => {
 
   const drawerWidth = 14;
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Header signedInUser={props.signedInUser}></Header>
+      <Header></Header>
 
       <Drawer
         sx={{

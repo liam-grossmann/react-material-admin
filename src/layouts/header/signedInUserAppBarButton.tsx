@@ -1,16 +1,15 @@
 import { Avatar, Box, Button, IconButton, Menu, MenuItem, Tooltip, Typography } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SecurityContext } from "../../contexts/securityContext";
 import { IUser } from "../../domain/User";
 
-export interface ISignedInUserAppBarButtonProps {
-  signedInUser: IUser;
-}
 
-export const SignedInUserAppBarButton = (props: ISignedInUserAppBarButtonProps) => {
+
+export const SignedInUserAppBarButton = () => {
 
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const [signedInUser, setSignedInUser] = useState<IUser | undefined>(props.signedInUser);
+  const [signedInUser, setSignedInUser] = useState<IUser | undefined>(useContext(SecurityContext));
 
   const userMenuItems = ['Profile', 'Dashboard', 'Logout'];
 

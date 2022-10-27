@@ -40,7 +40,7 @@ export const Dashboard = () => {
                     title={"New Customers"}
                     valueText={"15"}
                     isUp={false}
-                    changeText={"2 less than yesterday"}
+                    changeText={"2 less than last week"}
                     onClick={handleCustomersIndicatorClick} />
             </Grid>
 
@@ -50,7 +50,7 @@ export const Dashboard = () => {
                     title={"Open Tickets"}
                     valueText={"7"}
                     isUp={true}
-                    changeText={"4 more then last week"}
+                    changeText={"4 more than last week"}
                     onClick={handleCustomersIndicatorClick} />
             </Grid>
 

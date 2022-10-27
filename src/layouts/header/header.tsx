@@ -1,13 +1,11 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useLocation, useNavigate } from "react-router-dom";
-import { IUser } from '../../domain/User';
-import { useState } from 'react';
+import { useLocation } from "react-router-dom";
 import { SignedInUserAppBarButton } from './signedInUserAppBarButton';
+
 
 
 // TODO: Pass this in as a prop
@@ -26,14 +24,13 @@ function getHeaderTitleFromLocationPath(pathName : string) : string {
 }
 
 
-export interface IHeaderProps {
-  signedInUser: IUser;
-} 
 
-export const Header = (props: IHeaderProps) => {
+export const Header = () => {
 
   const location = useLocation();
   const breadCrumbsTiitle = getHeaderTitleFromLocationPath(location.pathname);
+
+  
 
   return (
     <AppBar
@@ -54,7 +51,7 @@ export const Header = (props: IHeaderProps) => {
           {breadCrumbsTiitle}
         </Typography>
 
-        <SignedInUserAppBarButton signedInUser={props.signedInUser} />
+        <SignedInUserAppBarButton />
         
       </Toolbar>
     </AppBar>
