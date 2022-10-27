@@ -14,27 +14,48 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 // https://mui.com/base/react-input/#adornments
 // Requires new libraries and quite a lot of custom styling so I decided not to include.
 
-interface State {
-    emailAddress: string;
-    password: string;
-}
 
 export default function SignIn() {
 
     const navigate = useNavigate();
 
-    const [values, setValues] = useState<State>({
-        emailAddress: '',
-        password: ''
-    });
+    const [emailAddress, setEmailAddress] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [showEmailAddressError, setShowEmailAddressError] = useState<boolean>(false);
+    const [showPasswordError, setShowPasswordError] = useState<boolean>(false);
 
-    const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValues({ ...values, [prop]: event.target.value });
+    const handleEmailAddressChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setEmailAddress(e.target.value);
+        setShowEmailAddressError(false);
     };
 
-    const handleSignInClick = () => {
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setPassword(e.target.value);
+        setShowPasswordError(false);
+    };
+
+    // For demo purposes fields are not validated. We always go back to home. 
+    const handleSignInClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        navigate('/');
+
+        // Code here to validate inputs. Ensure valid email. 
+        if (emailAddress.trim() === '') {
+            setShowEmailAddressError(true);
+            return;
+        }
+        if (password.trim() === '') {
+            setShowPasswordError(true);
+            return;
+        }
+
+        // Code here to register authenticate user.
+        // Call API and check for errors. For example, user may not exist; password incorrect;
+        // Too many password attempts etc. Lock user out ?
         navigate('/');
     }
+
+
 
     return (
 
@@ -48,10 +69,10 @@ export default function SignIn() {
                             label='Email Address'
                             required variant='outlined'
                             size='small'
-                            error={!values.emailAddress}
-                            value={values.emailAddress}
-                            onChange={handleChange('emailAddress')}
-                            helperText={!values.emailAddress ? 'Email is required' : ''}>
+                            error={showEmailAddressError}
+                            value={emailAddress}
+                            onChange={(e) => handleEmailAddressChange(e)}
+                            helperText={showEmailAddressError ? 'Email is required' : ''}>
                         </TextField>
 
                         <TextField fullWidth
@@ -59,21 +80,29 @@ export default function SignIn() {
                             required variant='outlined'
                             size='small'
                             type='password'
-                            error={!values.password}
-                            value={values.password}
-                            onChange={handleChange('password')}
-                            helperText={!values.password ? 'Password is required' : 'Do not share your password with anyone'
+                            error={showPasswordError}
+                            value={password}
+                            onChange={(e) => handlePasswordChange(e)}
+                            helperText={showPasswordError ? 'Password is required' : 'Do not share your password with anyone'
                             }>
                         </TextField>
+
+                        <FormGroup>
+                            <FormControlLabel control={<Switch size="small" />}
+                                label={<Typography variant='body2'>Remember me</Typography>} />
+                        </FormGroup>
+
+                        <Button
+                            fullWidth
+                            type="submit"
+                            variant='contained'
+                            color='primary'
+                            onClick={(e) => handleSignInClick(e)}>Sign In
+                        </Button>
+
+
                     </Stack>
                 </Form>
-
-                <FormGroup>
-                    <FormControlLabel control={<Switch size="small" />}
-                        label={<Typography variant='body2'>Remember me</Typography>} />
-                </FormGroup>
-
-                <Button variant='contained' color='primary' onClick={() => handleSignInClick()}>Sign In</Button>
 
                 <Divider></Divider>
 
