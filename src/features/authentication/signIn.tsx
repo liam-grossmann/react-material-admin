@@ -79,7 +79,15 @@ export default function SignIn(props : ISignInProps) {
 
     return (
 
-        <Container maxWidth="xs">
+        <Container maxWidth="xs"
+        sx={{
+            maxWidth: '100px',
+            height: '500px',
+            paddingTop: '50px',
+            marginTop: '50px',
+            bgcolor: 'background.paper',
+            boxShadow: 2,
+            borderRadius: 4}}>
             <Stack spacing={4}>
                 <Typography variant='h5' textAlign='center'>Sign In</Typography>
 

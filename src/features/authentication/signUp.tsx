@@ -74,7 +74,14 @@ export default function SignUp() {
 
     return (
 
-        <Container maxWidth="xs">
+        <Container maxWidth="xs" sx={{
+            maxWidth: '100px',
+            height: '500px',
+            paddingTop: '50px',
+            marginTop: '50px',
+            bgcolor: 'background.paper',
+            boxShadow: 2,
+            borderRadius: 4}}>
             <Stack spacing={2}>
                 <Typography variant='h5' textAlign='center'>Sign Up</Typography>
 
