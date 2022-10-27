@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { useNavigate, Link, Form } from "react-router-dom";
 import { Button, Container, Divider, FormControlLabel, FormGroup, Switch, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
@@ -6,6 +6,8 @@ import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { IUser } from "../../domain/User";
+import { DataService } from "../../services/DataService";
 
 // TODO: should i create a default text field with default size and width ? 
 // https://github.com/creativetimofficial/material-dashboard-react/blob/main/src/layouts/authentication/sign-in/index.js
@@ -14,8 +16,12 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 // https://mui.com/base/react-input/#adornments
 // Requires new libraries and quite a lot of custom styling so I decided not to include.
 
+export interface ISignInProps {
+    onSignIn : Dispatch<SetStateAction<IUser | undefined>>;
+}
 
-export default function SignIn() {
+
+export default function SignIn(props : ISignInProps) {
 
     const navigate = useNavigate();
 
@@ -37,6 +43,15 @@ export default function SignIn() {
     // For demo purposes fields are not validated. We always go back to home. 
     const handleSignInClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+
+        // Here you would call an API to get the user. We just set user to 3rd user in the list and 
+        // set the user on the main form. This will in turn reset the user for the entire app.
+        // You should see the avatar change (unless we happen to selec the same user that we had before).
+        // This is pretty much all the code you'll need to sign in a valid user and reset the user context
+        // for the entire application. 
+        let dataService = new DataService();
+        let signedInUser = dataService.getUser(getRandomInt(0, 7));
+        props.onSignIn(signedInUser);
         navigate('/');
 
         // Code here to validate inputs. Ensure valid email. 
@@ -55,6 +70,11 @@ export default function SignIn() {
         navigate('/');
     }
 
+    function getRandomInt(min: number, max: number) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
 
     return (
