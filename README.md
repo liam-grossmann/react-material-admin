@@ -1,6 +1,6 @@
 # react-material-admin
 
-Live: https://purple-grass-0e0f3ca10.2.azurestaticapps.net/
+Live: https://gentle-flower-0e5535e03.2.azurestaticapps.net/
 
 
 
